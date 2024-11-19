@@ -1,15 +1,21 @@
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom"
 import LoginPage from "./pages/LoginPage"
+import RegisterPage from "./pages/RegisterPage";
+import CreateProductPage from "./pages/CreateProduct";
 
 
-function App() {
+export default function App() {
 
   return (
-    <>
-      <div className="bg-red-500 text-white p-4">
-        testing
-      </div>
-    </>
-  )
-}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage/>}/>
+          <Route path="/auth/login" element={<LoginPage/>}/>
+          <Route path="/products" element={<CreateProductPage/>}/>
 
-export default App
+
+        </Routes>
+      </BrowserRouter>
+  );
+};
+

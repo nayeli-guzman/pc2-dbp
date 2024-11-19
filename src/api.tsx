@@ -58,3 +58,13 @@ export async function deleteProgramatById(idx:number) {
         throw error;
     }
 }
+
+export async function fibonacci(idx:number) {
+    try {
+        const response = await axios.get(path+"/fibonacci/"+idx);
+        return response.data;
+    } catch(error) {
+        console.error(error);
+        throw error;
+    }
+}

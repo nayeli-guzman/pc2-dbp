@@ -1,13 +1,18 @@
-import LoginPage from "./pages/LoginPage"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import MainPage from "./pages/MainPage"
 
 
 function App() {
 
   return (
     <>
-      <div className="bg-red-500 text-white p-4">
-        testing
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPage/>}/>
+
+
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

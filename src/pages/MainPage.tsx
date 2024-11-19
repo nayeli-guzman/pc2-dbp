@@ -1,4 +1,5 @@
 export default function MainPage(){
+    return(
     <>
     <button className="bg-red-500">
         Añadir
@@ -12,5 +13,5 @@ export default function MainPage(){
     <button className="bg-red-500">
         Borrar
     </button>
-    </>
+    </>)
 }

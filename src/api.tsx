@@ -1,10 +1,11 @@
 import axios from "axios";
+import { ProgramaRequest } from "./dtos/ProgramaRequest";
 
 const path = "http://127.0.0.1"
 
 export async function postPrograma(programaRequest: ProgramaRequest) {
     try {
-        const response = await axios.post(path+"/programa", productRequest);
+        const response = await axios.post(path+"/programa", programaRequest);
         return response.data;
     } catch(error) {
         console.error(error);

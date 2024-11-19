@@ -1,6 +1,6 @@
 export default function MainPage(){
     return(
-    <>
+    <div className="space-y-10">
     <button className="bg-red-500">
         Añadir
     </button>
@@ -13,5 +13,5 @@ export default function MainPage(){
     <button className="bg-red-500">
         Borrar
     </button>
-    </>)
+    </div>)
 }

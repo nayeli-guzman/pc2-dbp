@@ -6,25 +6,6 @@ import { ProgramaRequest } from "../dtos/ProgramaRequest";
 export default function GetPage() {
   const { number } = useParams<{ number: string }>(); // Captura el parámetro de la URL
   const [data, setData] = useState<ProgramaRequest | null>(null); // Estado para guardar los datos
-    
-  /*
-  useEffect(() => {
-    // Llamada a la función asíncrona
-    async function fetchData() {
-      if (number) {
-        try {
-          const response = await getProgramaById(parseInt(number)); // Llama a tu función con el número
-          setData(response.data); // Almacena los datos en el estado
-        } catch (error) {
-          console.error("Error al obtener los datos:", error);
-          setData("Error al obtener los datos");
-        }
-      }
-    }
-
-    fetchData();
-  }, []); // Ejecuta el efecto cuando `number` cambie
-*/
 
   return (
     <div className="p-5">

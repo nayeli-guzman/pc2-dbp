@@ -2,9 +2,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import MainPage from "./pages/MainPage"
 import CoursesPage from "./pages/Cursos";
 import GetPage from "./pages/GetCurso";
+import { deleteProgramatById } from "./api";
 
 
 function App() {
+
+
+
   return (
     <>
       <BrowserRouter>
@@ -12,8 +16,7 @@ function App() {
           <Route path="/" element={<MainPage/>}/>
           <Route path="/add" element={<CoursesPage/>}/>
           <Route path="/get/:number" element={<GetPage/>}/>
-          <Route path="/edit/:number" element={<MainPage/>}/>
-          <Route path="/delete/:number" element={<MainPage/>}/>
+          <Route path="/edit/:number" element={<CoursesPage/>}/>
 
         </Routes>
       </BrowserRouter>

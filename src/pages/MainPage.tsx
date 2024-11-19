@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
+import { deleteProgramatById } from "../api";
 
 export default function MainPage() {
     const navigate = useNavigate()
-    const [showInput, setShowInput] = useState(false); // Estado para mostrar el input
+    const [showInput1, setShowInput1] = useState(false); // Estado para mostrar el input
+    const [showInput2, setShowInput2] = useState(false); // Estado para mostrar el input
+    const [showInput3, setShowInput3] = useState(false); // Estado para mostrar el input
+
     const [number, setNumber] = useState(""); // Estado para almacenar el número
   
-
+    async function handleDelete(idx:number) {
+        await deleteProgramatById(idx);
+      }
 
     return (
         <div className="min-h-screen flex flex-col items-center bg-white text-gray-800">
@@ -31,19 +37,19 @@ export default function MainPage() {
                         Añadir
                     </button>
                     <button className="bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 shadow-md"
-                onClick={()=>{setShowInput(true)}}>
+                onClick={()=>{setShowInput1(true)}}>
                         Ver
                     </button>
                     <button className="bg-green-600 text-white py-2 px-6 rounded-md hover:bg-green-700 shadow-md"
-            onClick={()=>{setShowInput(true)}}>
+            onClick={()=>{setShowInput2(true)}}>
                         Editar
                     </button>
                     <button className="bg-red-600 text-white py-2 px-6 rounded-md hover:bg-red-700 shadow-md"
-            onClick={()=>{setShowInput(true)}}>
+            onClick={()=>{setShowInput3(true)}}>
                         Borrar
                     </button>
 
-            {showInput && (
+            {showInput1 && (
         <div className="mt-3">
           <input
             type="number"
@@ -54,16 +60,15 @@ export default function MainPage() {
           />
           <button
             className="ml-3 bg-blue-500 p-2 text-white rounded"
-            onClick={() => {setShowInput(false);navigate(`/get/${number}`)}} 
+            onClick={() => {setShowInput1(false); navigate(`/get/${number}`)}} 
           >
             Enviar
           </button>
-        </div>)
-        }
-                </div>
-            </main>
+            </div>) }
+        </div>
+    
+        </main>
 
-            {/* Footer */}
             <footer className="w-full bg-gray-100 py-4">
                 <div className="max-w-6xl mx-auto text-center text-gray-600 text-sm">
                     © {new Date().getFullYear()} UTEC Perú. Todos los derechos reservados.

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import MainPage from "./pages/MainPage"
 import CoursesPage from "./pages/Cursos";
+import GetPage from "./pages/GetCurso";
 
 
 function App() {
@@ -10,9 +11,9 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage/>}/>
           <Route path="/add" element={<CoursesPage/>}/>
-          <Route path="/get" element={<CoursesPage/>}/>
-          <Route path="/edit" element={<MainPage/>}/>
-          <Route path="/delete" element={<MainPage/>}/>
+          <Route path="/get/:number" element={<GetPage/>}/>
+          <Route path="/edit/:number" element={<MainPage/>}/>
+          <Route path="/delete/:number" element={<MainPage/>}/>
 
         </Routes>
       </BrowserRouter>

@@ -40,15 +40,7 @@ export async function paginationProducts(skip:number, limit:number) {
 }
 */}
 
-export async function updateProductById(idx:number, productRequest : ProductRequest) {
-    try {
-        const response = await axios.put(path+"/programa/"+idx, productRequest);
-        return response.data;
-    } catch(error) {
-        console.error(error);
-        throw error;
-    }
-}
+
 
 export async function deleteProgramatById(idx:number) {
     try {

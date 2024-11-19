@@ -14,13 +14,16 @@ export default function MainPage() {
                 onClick={()=>navigate("/post")}>
                 Añadir
             </button>
-            <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+            <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                onClick={()=>{setShowInput(true)}}>
                 Ver
             </button>
-            <button className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">
+            <button className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+            onClick={()=>{setShowInput(true)}}>
                 Editar
             </button>
-            <button className="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">
+            <button className="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600"
+            onClick={()=>{setShowInput(true)}}>
                 Borrar
             </button>
 
@@ -31,15 +34,14 @@ export default function MainPage() {
             placeholder="Escribe un número"
             className="border border-gray-300 p-2 rounded"
             value={number}
-            onChange={(e) => setNumber(e.target.value)} // Actualizar el número
+            onChange={(e) => setNumber(e.target.value)} 
           />
           <button
             className="ml-3 bg-blue-500 p-2 text-white rounded"
-            onClick={() => navigate(`/get/${number}`)} // Redirigir con el número
+            onClick={() => {setShowInput(false);navigate(`/get/${number}`)}} 
           >
             Enviar
           </button>
-            
         </div>)
         }
         </div>

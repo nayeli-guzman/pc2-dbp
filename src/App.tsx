@@ -3,7 +3,6 @@ import MainPage from "./pages/MainPage"
 
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
@@ -17,4 +16,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
